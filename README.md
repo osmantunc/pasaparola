@@ -8,10 +8,6 @@
 
 > **İngilizce kelime öğrenme oyunu** - Pasaparola tarzında eğlenceli ve etkileşimli web uygulaması
 
-## 🌟 Demo
-
-**[🚀 Canlı Demo'yu Deneyin](https://[username].github.io/pasaparola-oyunu)**
-
 ## 📖 İçindekiler
 
 - [Özellikler](#-özellikler)
@@ -44,12 +40,6 @@
 - **CSV** dosyaları
 - **Word** dosyaları (.doc, .docx)
 - Otomatik format algılama
-
-### 💾 Hafıza Yönetimi
-- Kelime listelerini tarayıcıda kaydetme
-- **Özel** (sadece kendi cihazınızda) veya **Genel** (herkesle paylaşılan) listeler
-- Kayıtlı listeleri tek tıkla yükleme
-- Liste silme ve yönetme
 
 ### 📱 PWA (Progressive Web App)
 - Mobil cihazlara "uygulama" olarak indirilebilir
@@ -120,13 +110,6 @@
 
 ## 🚀 Kurulum
 
-### GitHub Pages ile Canlı Demo
-
-1. Bu repository'yi fork edin
-2. Repository ayarlarında **Pages** bölümüne gidin
-3. **Source:** "Deploy from a branch" seçin
-4. **Branch:** "main" seçin
-5. Birkaç dakika sonra siteniz `https://[username].github.io/pasaparola-oyunu` adresinde yayında!
 
 ### Yerel Kurulum
 
