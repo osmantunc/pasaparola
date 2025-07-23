@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-section {
+    margin-bottom: 20px;
+}
+
+.file-upload {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.file-upload label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.file-upload input[type="file"] {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.save-options {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.save-options label {
+    font-size: 14px;
+    color: #333;
+}
+
+.save-options select,
+.save-options input[type="text"] {
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.save-options input[type="text"] {
+    min-width: 100px;
+}
+
+.saved-lists {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.saved-lists h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.saved-lists select {
+    width: 200px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 2px solid #ffc107;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.saved-lists button {
+    background: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.saved-lists button:hover:not(:disabled) {
+    background: #e0a800;
+    transform: translateY(-1px);
+}
+
+.saved-lists button:disabled {
+    background: #6c757d;
+    color: white;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.game-modes {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.game-modes h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mode-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.mode-btn:hover:not(:disabled) {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.mode-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.game-area {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.question-area {
+    text-align: center;
+    padding: 20px;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.timer {
+    font-size: 48px;
+    font-weight: bold;
+    color: #28a745;
+    background: white;
+    border: 3px solid #28a745;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.timer.warning {
+    color: #ffc107;
+    border-color: #ffc107;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+    animation: pulse 1s infinite;
+}
+
+.timer.danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    animation: pulse 0.5s infinite;
+}
+
+.timer-label {
+    font-size: 16px;
+    color: #666;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.question {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+}
+
+#answerInput {
+    width: 70%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    text-align: center;
+}
+
+#answerInput:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+#questionCount {
+    width: 100px;
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.score-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#scoreText {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+#pointsText {
+    font-weight: bold;
+    font-size: 16px;
+    color: #007bff;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#submitAnswer {
+    background: #dc3545;
+}
+
+#submitAnswer:hover:not(:disabled) {
+    background: #c82333;
+}
+
+#showStats {
+    background: #17a2b8;
+}
+
+#showStats:hover:not(:disabled) {
+    background: #138496;
+}
+
+#resetGame {
+    background: #ffc107;
+    color: #212529;
+}
+
+#resetGame:hover {
+    background: #e0a800;
+}
+
+#helpBtn {
+    background: #6f42c1;
+}
+
+#helpBtn:hover {
+    background: #5a32a3;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover {
+    color: #000;
+}
+
+#modalTitle {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#modalText {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#modalOk {
+    background: #007bff;
+}
+
+#modalOk:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .question {
+        font-size: 20px;
+    }
+    
+    #answerInput {
+        width: 90%;
+        font-size: 16px;
+    }
+    
+    .score-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .mode-btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-area {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Success/Error indicators */
+.success {
+    background-color: #d4edda !important;
+    border-color: #28a745 !important;
+    color: #155724 !important;
+}
+
+.error {
+    background-color: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+}

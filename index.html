@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasaparola Oyunu - Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <script src="https://cdn.jsdelivr.net/npm/mammoth@1.4.21/mammoth.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Pasaparola Oyunu</h1>
+        
+        <div class="game-section">
+            <div class="file-upload">
+                <label for="wordFile">Kelime Dosyası Seçin:</label>
+                <input type="file" id="wordFile" accept=".txt,.csv,.doc,.docx" />
+                <button id="loadFile">Dosyayı Yükle</button>
+                <div class="save-options" style="margin-top: 10px;">
+                    <label>
+                        <input type="checkbox" id="saveToMemory"> Hafızada Kaydet
+                    </label>
+                    <select id="privacyLevel" disabled>
+                        <option value="private">Özel (Sadece Ben)</option>
+                        <option value="public">Genel (Herkes Kullanabilir)</option>
+                    </select>
+                    <input type="text" id="listName" placeholder="Liste adı" disabled style="width: 120px;">
+                </div>
+            </div>
+            
+            <div class="saved-lists">
+                <h3>Kayıtlı Listeler:</h3>
+                <select id="savedListSelect">
+                    <option value="">Seçin...</option>
+                </select>
+                <button id="loadSavedList" disabled>Bu Listeyi Kullan</button>
+                <button id="deleteSavedList" disabled>Sil</button>
+            </div>
+            
+            <div class="game-modes">
+                <h3>Oyun Modu Seçin:</h3>
+                <button id="normalMode" class="mode-btn" disabled>Normal Mod (A-Z)</button>
+                <button id="mixedMode" class="mode-btn" disabled>Karışık Mod</button>
+                <input type="number" id="questionCount" placeholder="Soru sayısı" value="10" min="1" disabled>
+            </div>
+            
+            <div class="game-area">
+                <div id="gameInfo" class="info-text">Oyunu başlatmak için dosya yükleyin.</div>
+                
+                <div id="questionArea" class="question-area" style="display: none;">
+                    <div class="timer-container">
+                        <div id="timerDisplay" class="timer">20</div>
+                        <div class="timer-label">saniye</div>
+                    </div>
+                    <div id="currentQuestion" class="question"></div>
+                    <input type="text" id="answerInput" placeholder="Cevabınızı yazın..." disabled>
+                    <button id="submitAnswer" disabled>Gönder</button>
+                </div>
+                
+                <div id="scoreArea" class="score-area">
+                    <div class="score-container">
+                        <span id="scoreText">Skor: 0/0</span>
+                        <span id="pointsText">Puan: 0</span>
+                    </div>
+                    <button id="showStats" disabled>İstatistikler</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="resetGame">Yeni Oyun</button>
+            <button id="helpBtn">Yardım</button>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Bilgi</h3>
+            <p id="modalText"></p>
+            <button id="modalOk">Tamam</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
